@@ -33,7 +33,7 @@ export default function TabLayout() {
       />
       <Tabs.Screen
       name='about'
-      options={{title:"about us",
+      options={{title:"about",
         tabBarIcon:({color,size})=>{
           return(
             <View
@@ -46,13 +46,13 @@ export default function TabLayout() {
           );
         }
       }}/>
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
-      />
+      /> */}
       
     </Tabs>
   );

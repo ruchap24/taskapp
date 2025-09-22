@@ -6,7 +6,7 @@ import { useRouter } from "expo-router";
 const Login = () => {
     const router=useRouter();
     const onPresss=()=>{
-        router.navigate("/login");
+        router.navigate("/signup");
     };
   return (
     <View>
