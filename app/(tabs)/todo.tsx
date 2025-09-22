@@ -1,30 +1,28 @@
 import { useState } from "react"; // Importing useState hook from React
 import {
-  View,         // Importing View component for layout (just like div in HTML)
-  Text,       // Importing Text component for displaying text 
-  TextInput,    // Importing TextInput component for user input
+  View,         
+  Text,  
+  TextInput,    // user input
   TouchableOpacity, // Importing TouchableOpacity for button-like behavior      iykyu :)
   FlatList,    // Importing FlatList for rendering lists
-  StyleSheet,   // Importing StyleSheet for styling components
-} from "react-native"; // Importing necessary components from React Native
+  StyleSheet, 
+} from "react-native";
 
 // Main App component
 const App = () => {
-  // State to store the current task input
   const [task, setTask] = useState("");
-  // State to store the list of tasks
   const [tasks, setTasks] = useState([]);
   // State to track the index of the task being edited
   const [editIndex, setEditIndex] = useState(-1);
 
-  // Function to handle adding or updating a task
+
   const handleAddTask = () => {
     if (task) {
       if (editIndex !== -1) {
         // If editIndex is not -1, update the existing task
         const updatedTasks = [...tasks];
         updatedTasks[editIndex] = task; // Update the task at the specified index
-        setTasks(updatedTasks); // Update the tasks state
+        setTasks(updatedTasks); 
         setEditIndex(-1); // Reset editIndex
       } else {
         // If editIndex is -1, add a new task
@@ -66,18 +64,18 @@ const App = () => {
   // Main UI rendering
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>rucha's</Text> {/* App heading */}
-      <Text style={styles.title}>ToDo App</Text> {/* App title */}
+      <Text style={styles.heading}>rucha's</Text>
+      <Text style={styles.title}>ToDo App</Text> 
       <TextInput
         style={styles.input}
-        placeholder="Enter task" // Placeholder text for the input field
-        value={task} // Bind input value to task state
-        onChangeText={(text) => setTask(text)} // Update task state on text change
+        placeholder="Enter task"
+        value={task} 
+        onChangeText={(text) => setTask(text)}
       />
 
       <TouchableOpacity
         style={styles.addButton}
-        onPress={handleAddTask} // Call handleAddTask on button press
+        onPress={handleAddTask}
       >
         <Text style={styles.addButtonText}>
           {editIndex !== -1 ? "Update Task" : "Add Task"} {/* Button text changes based on edit mode */}
@@ -93,86 +91,85 @@ const App = () => {
   );
 };
 
-// Styles for the components
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "black", // Background color of the container
+    backgroundColor: "black",
     flex: 1, // Take full screen height
-    padding: 40, // Add padding around the container
-    marginTop: 40, // Add margin at the top
+    padding: 40, 
+    marginTop: 40,
   },
   title: {
     color: "white",
-    fontSize: 24, // Font size for the title
-    fontWeight: "bold", // Bold font
-    marginBottom: 20, // Margin below the title
+    fontSize: 24, 
+    fontWeight: "bold",
+    marginBottom: 20,
   },
   heading: {
-    fontSize: 30, // Font size for the heading
-    fontWeight: "bold", // Bold font
-    marginBottom: 7, // Margin below the heading
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 7, 
     color: "white",
   },
   input: {
     color :"white",
-    borderWidth: 3, // Border width for the input field
-    borderColor: "#e3e4b9ff", // Border color
-    padding: 10, // Padding inside the input field
-    marginBottom: 10, // Margin below the input field
+    borderWidth: 3,
+    borderColor: "white",
+    padding: 10, 
+    marginBottom: 10, 
     borderRadius: 10, // Rounded corners
-    fontSize: 18, // Font size for the input text
+    fontSize: 18, 
   },
   addButton: {
-    color: "white", // Text color for the button
-    backgroundColor: "green", // Background color for the button
-    padding: 10, // Padding inside the button
+    color: "white", //
+    backgroundColor: "green", 
+    padding: 10, //
     borderRadius: 5, // Rounded corners
-    marginBottom: 10, // Margin below the button
+    marginBottom: 10, 
   },
   addButtonText: {
-    color: "white", // Text color
-    fontWeight: "bold", // Bold font
-    textAlign: "center", // Center align the text
-    fontSize: 18, // Font size for the button text
+    color: "white", 
+    fontWeight: "bold", 
+    textAlign: "center", 
+    fontSize: 18, 
   },
   task: {
     color :"while",
     flexDirection: "row", // Arrange items in a row
     justifyContent: "space-between", // Space between items
     alignItems: "center", // Align items vertically in the center
-    marginBottom: 15, // Margin below each task
-    fontSize: 18, // Font size for the task text
+    marginBottom: 15, 
+    fontSize: 18,
   },
   itemList: {
     color :"black",
     backgroundColor:"orange",
-    fontSize: 19, // Font size for the task text
-    padding: 10, // Padding around the task text
-    borderRadius: 5, // Rounded corners for the task text background
+    fontSize: 19,
+    padding: 10, 
+    borderRadius: 5,
     flex: 1, // Take up available space
   },
   taskButtons: {
-    flexDirection: "row", // Arrange buttons in a row
+    flexDirection: "row",
   },
   editButton: {
-    marginLeft: 10, // Margin to the left of the edit button
-    marginRight: 10, // Margin to the right of the edit button
-    color: "green", // Green color for the edit button text
-    fontWeight: "bold", // Bold font
-    fontSize: 18, // Font size for the edit button text
+    marginLeft: 10,
+    marginRight: 10, 
+    color: "green",
+    fontWeight: "bold", 
+    fontSize: 18,
     backgroundColor:"white",
     padding:10,
     borderRadius:5,
   },
   deleteButton: {
-    color: "red", // Red color for the delete button text
-    fontWeight: "bold", // Bold font
-    fontSize: 18, // Font size for the delete button text
+    color: "red", 
+    fontWeight: "bold", 
+    fontSize: 18, 
     backgroundColor:"white",
     padding:10,
     borderRadius:5,
   },
 });
 
-// Export the App component as the default export
 export default App;
