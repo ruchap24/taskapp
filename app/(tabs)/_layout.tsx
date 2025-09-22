@@ -17,7 +17,7 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
       }}>
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
@@ -30,8 +30,8 @@ export default function TabLayout() {
           title: 'Explore',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
-      />
-      <Tabs.Screen
+      /> */}
+      {/* <Tabs.Screen
       name='about'
       options={{title:"about",
         tabBarIcon:({color,size})=>{
@@ -45,7 +45,7 @@ export default function TabLayout() {
             }}/>
           );
         }
-      }}/>
+      }}/> */}
       {/* <Tabs.Screen
         name="settings"
         options={{
