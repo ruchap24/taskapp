@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 // Main App component
-const App = () => {
+const Todo = () => {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
   // State to track the index of the task being edited
@@ -65,7 +65,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>rucha's</Text>
-      <Text style={styles.title}>ToDo App</Text> 
+      <Text style={styles.title}>ToDo List</Text> 
       <TextInput
         style={styles.input}
         placeholder="Enter task"
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   },
   addButton: {
     color: "white", //
-    backgroundColor: "green", 
+    backgroundColor: "#e419f7ff", 
     padding: 10, //
     borderRadius: 5, // Rounded corners
     marginBottom: 10, 
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   itemList: {
     color :"black",
-    backgroundColor:"orange",
+    backgroundColor:"#d793e0ff",
     fontSize: 19,
     padding: 10, 
     borderRadius: 5,
@@ -172,4 +172,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Todo;
